@@ -1,0 +1,26 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://bjs785tidhph7"]
+
+[ext_resource type="Texture2D" uid="uid://dkioun210vdg2" path="res://interfaz/boton de atras_0001.png" id="1_oup84"]
+[ext_resource type="Texture2D" uid="uid://e1de24r6wofo" path="res://interfaz/boton de atras_0002.png" id="2_kxfox"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ug7d8"]
+texture = ExtResource("1_oup84")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tmyt3"]
+texture = ExtResource("2_kxfox")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ie1wl"]
+texture = ExtResource("2_kxfox")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_isxpe"]
+texture = ExtResource("1_oup84")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g8vw1"]
+texture = ExtResource("2_kxfox")
+
+[resource]
+Button/styles/disabled = SubResource("StyleBoxTexture_ug7d8")
+Button/styles/focus = SubResource("StyleBoxTexture_tmyt3")
+Button/styles/hover = SubResource("StyleBoxTexture_ie1wl")
+Button/styles/normal = SubResource("StyleBoxTexture_isxpe")
+Button/styles/pressed = SubResource("StyleBoxTexture_g8vw1")
