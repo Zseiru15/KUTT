@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmds14wuligjv"]
+
+[ext_resource type="Script" path="res://escenas/instanciador.gd" id="1_dwe4w"]
+
+[node name="instanciador" type="Node"]
+script = ExtResource("1_dwe4w")
