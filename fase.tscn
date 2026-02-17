@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bguvw2mu7nrby"]
+
+[ext_resource type="LabelSettings" uid="uid://1jmuiupun6d0" path="res://escenas/meet.tres" id="1_svsy4"]
+
+[node name="fase" type="Label"]
+offset_left = 164.0
+offset_top = 6.0
+offset_right = 204.0
+offset_bottom = 29.0
+text = "fase"
+label_settings = ExtResource("1_svsy4")

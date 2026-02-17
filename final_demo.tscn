@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjmpr2b3quekk"]
+
+[ext_resource type="Texture2D" uid="uid://cgi31vb3h1goq" path="res://sprites/test/placeholder_fin_demo.png" id="1_imh6r"]
+[ext_resource type="Script" path="res://final_demo.gd" id="1_xkf8w"]
+
+[sub_resource type="Gradient" id="Gradient_qe35t"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_m2tpt"]
+gradient = SubResource("Gradient_qe35t")
+
+[node name="final demo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xkf8w")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(721, 267)
+rotation = -1.5651
+scale = Vector2(-23.1155, 32.568)
+texture = SubResource("GradientTexture2D_m2tpt")
+
+[node name="Camera2D" type="Camera2D" parent="Sprite2D2"]
+position = Vector2(0.469062, -4.54252)
+rotation = 1.57882
+scale = Vector2(0.336204, -0.473674)
+skew = -0.00398135
+zoom = Vector2(1.5, 1.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(573, 277)
+scale = Vector2(10.9493, 10.9493)
+texture = ExtResource("1_imh6r")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 346.0
+offset_top = 504.0
+offset_right = 471.0
+offset_bottom = 535.0
+scale = Vector2(4.08653, 4.08653)
+text = "menu principal"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
