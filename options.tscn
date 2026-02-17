@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://43rxgli885u5"]
+
+[ext_resource type="Theme" uid="uid://bstoi5hxlkocv" path="res://interfaz/options.tres" id="1_8hnr4"]
+
+[node name="options" type="Button"]
+offset_left = 6.0
+offset_top = 53.0
+offset_right = 48.0
+offset_bottom = 84.0
+scale = Vector2(0.923471, 1.24921)
+theme = ExtResource("1_8hnr4")
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 5.70927
+offset_top = -1.47929
+offset_right = 64.7093
+offset_bottom = 21.5207
+scale = Vector2(0.683242, 0.950753)
+text = "options
+"
