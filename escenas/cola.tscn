@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://b81fo2dkwfaxf"]
+
+[ext_resource type="Texture2D" uid="uid://e407adgbldxa" path="res://sprites/test/placeholderboss_0002.png" id="1_hvkix"]
+[ext_resource type="PackedScene" uid="uid://d3xumj2ac73pa" path="res://escenas/collisionador.tscn" id="2_a3rvp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmkov"]
+size = Vector2(20, 57)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_poh17"]
+size = Vector2(12.5687, 35.8207)
+
+[node name="cola" type="Area2D"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(-68.3447, -66.7254)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(69.3447, 3.22539)
+shape = SubResource("RectangleShape2D_cmkov")
+disabled = true
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(69.3447, 7.72539)
+texture = ExtResource("1_hvkix")
+
+[node name="collisionador" parent="." instance=ExtResource("2_a3rvp")]
+position = Vector2(69.3447, 2.7254)
+
+[node name="CollisionShape2D" parent="collisionador" index="0"]
+position = Vector2(5.30481e-06, -0.31422)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_poh17")
+
+[node name="Sprite2D" parent="collisionador" index="1"]
+visible = false
+
+[editable path="collisionador"]

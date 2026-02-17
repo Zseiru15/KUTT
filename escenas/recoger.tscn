@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8v5dm77ysrwy"]
+
+[ext_resource type="AudioStream" uid="uid://nb31jf2yjjvc" path="res://music/Y2meta.app - Minecraft Item Pickup Sound Effect (128 kbps).mp3" id="1_a47gd"]
+
+[node name="recoger" type="AudioStreamPlayer2D"]
+position = Vector2(-257, -298)
+stream = ExtResource("1_a47gd")
+volume_db = 24.0

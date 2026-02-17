@@ -1,0 +1,72 @@
+[gd_scene load_steps=13 format=3 uid="uid://3b8n45uvi8sh"]
+
+[ext_resource type="PackedScene" uid="uid://bog0vyanpfaeg" path="res://escenas/kutt.tscn" id="1_jv4jt"]
+[ext_resource type="PackedScene" uid="uid://b8v5dm77ysrwy" path="res://escenas/recoger.tscn" id="1_uoxgd"]
+[ext_resource type="Texture2D" uid="uid://bgcojxxt3hac1" path="res://sprites/test/mapa 1 finalizado.png" id="1_vrbcc"]
+[ext_resource type="PackedScene" uid="uid://c00130nyfetg7" path="res://escenas/camara principal.tscn" id="2_1pc6q"]
+[ext_resource type="PackedScene" uid="uid://d0vnhi4ml3fdc" path="res://escenas/meet.tscn" id="5_ne6e6"]
+[ext_resource type="PackedScene" uid="uid://jgn2xun716am" path="res://escenas/fritasaurus.tscn" id="6_gjgkt"]
+[ext_resource type="PackedScene" uid="uid://cufcschlsyvf" path="res://escenas/stage_timer.tscn" id="9_dt31h"]
+[ext_resource type="AudioStream" uid="uid://xjiuupb0acst" path="res://music/Y2meta.app - [no copyright music] _My Comfy Space_ lofi background music (128 kbps).mp3" id="10_lvcyo"]
+[ext_resource type="PackedScene" uid="uid://bkfo1exbak3gg" path="res://escenas/caminando.tscn" id="11_1nod4"]
+[ext_resource type="PackedScene" uid="uid://bg7wb7famqvps" path="res://menu.tscn" id="11_dfwfi"]
+
+[sub_resource type="Gradient" id="Gradient_iujxs"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ufpa4"]
+gradient = SubResource("Gradient_iujxs")
+fill_from = Vector2(1, 0)
+
+[node name="nivel 1" type="Node2D"]
+position = Vector2(278, 272)
+
+[node name="recoger" parent="." instance=ExtResource("1_uoxgd")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(23.6021, 11.1031)
+texture = SubResource("GradientTexture2D_ufpa4")
+
+[node name="fondo1" type="Sprite2D" parent="."]
+texture = ExtResource("1_vrbcc")
+
+[node name="Camera2D" parent="fondo1" instance=ExtResource("2_1pc6q")]
+zoom = Vector2(1.1, 1.1)
+limit_smoothed = true
+
+[node name="meet" parent="." instance=ExtResource("5_ne6e6")]
+position = Vector2(21, -26)
+
+[node name="kutt" parent="." instance=ExtResource("1_jv4jt")]
+
+[node name="fritasaurus" parent="." instance=ExtResource("6_gjgkt")]
+top_level = false
+position = Vector2(257, -259)
+
+[node name="fritasaurus2" parent="." instance=ExtResource("6_gjgkt")]
+top_level = false
+position = Vector2(-266, -127)
+
+[node name="fritasaurus3" parent="." instance=ExtResource("6_gjgkt")]
+top_level = false
+position = Vector2(257, -2)
+
+[node name="fritasaurus4" parent="." instance=ExtResource("6_gjgkt")]
+top_level = false
+position = Vector2(-266, 128)
+
+[node name="stage timer" parent="." instance=ExtResource("9_dt31h")]
+one_shot = true
+
+[node name="nivel 1 musica" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_lvcyo")
+autoplay = true
+
+[node name="caminando" parent="." instance=ExtResource("11_1nod4")]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+top_level = true
+position = Vector2(286, 286)
+
+[node name="menu" parent="." instance=ExtResource("11_dfwfi")]
+
+[connection signal="timeout" from="stage timer" to="meet" method="_on_stage_timer_timeout"]

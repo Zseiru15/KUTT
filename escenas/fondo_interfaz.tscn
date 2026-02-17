@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ba7j1ygrljrfy"]
+
+[ext_resource type="Texture2D" uid="uid://djpp78ay2parq" path="res://interfaz/options.png" id="1_o44xh"]
+
+[node name="fondo interfaz" type="Sprite2D"]
+position = Vector2(0, 6)
+texture = ExtResource("1_o44xh")

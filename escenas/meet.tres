@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://1jmuiupun6d0"]
+
+[ext_resource type="FontFile" uid="uid://cavrkgt4nv5u4" path="res://fonts/pixel-script-font/PixelScriptRegular-0WnDG.otf" id="1_h5jx5"]
+
+[resource]
+font = ExtResource("1_h5jx5")
+font_color = Color(0, 1, 0, 1)

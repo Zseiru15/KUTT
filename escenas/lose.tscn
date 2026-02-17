@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bornjj66c6l65"]
+
+[ext_resource type="Texture2D" uid="uid://cnjuxdev0l2tu" path="res://sprites/test/Lose.png" id="1_ex3vp"]
+[ext_resource type="Script" uid="uid://bh83yuihf7f35" path="res://codigo/lose.gd" id="1_o5mkv"]
+[ext_resource type="PackedScene" uid="uid://c00130nyfetg7" path="res://escenas/camara principal.tscn" id="2_6uwtr"]
+
+[node name="lose" type="Node2D"]
+script = ExtResource("1_o5mkv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ex3vp")
+
+[node name="Camera2D" parent="Sprite2D" instance=ExtResource("2_6uwtr")]
+zoom = Vector2(4.1, 4.1)
+
+[node name="Button" type="Button" parent="Sprite2D/Camera2D"]
+offset_left = -41.0714
+offset_top = 60.0
+offset_right = 26.9286
+offset_bottom = 91.0
+text = "go back"
+
+[connection signal="pressed" from="Sprite2D/Camera2D/Button" to="." method="_on_button_pressed"]

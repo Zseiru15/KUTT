@@ -1,0 +1,163 @@
+[gd_scene load_steps=13 format=3 uid="uid://jgn2xun716am"]
+
+[ext_resource type="Script" path="res://codigo/fritasaurus.gd" id="1_b4o6f"]
+[ext_resource type="Texture2D" uid="uid://ba0htcxg44uvn" path="res://sprites/personajes/enemigos/astanana.png" id="2_v6kb6"]
+[ext_resource type="PackedScene" uid="uid://d3xumj2ac73pa" path="res://escenas/collisionador.tscn" id="3_sy4ox"]
+
+[sub_resource type="Animation" id="Animation_mbsrh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ybkqe"]
+resource_name = "astanana1"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 4, 2]
+}
+
+[sub_resource type="Animation" id="Animation_y258q"]
+resource_name = "astanana2"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 7, 2]
+}
+
+[sub_resource type="Animation" id="Animation_xo8eu"]
+resource_name = "astanana3"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [6, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_cedoh"]
+resource_name = "astanana4"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [8, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_2uo0f"]
+resource_name = "astanana5"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 5]
+}
+
+[sub_resource type="Animation" id="Animation_0skxw"]
+resource_name = "astanana6"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4ru46"]
+_data = {
+"RESET": SubResource("Animation_mbsrh"),
+"astanana1": SubResource("Animation_ybkqe"),
+"astanana2": SubResource("Animation_y258q"),
+"astanana3": SubResource("Animation_xo8eu"),
+"astanana4": SubResource("Animation_cedoh"),
+"astanana5": SubResource("Animation_2uo0f"),
+"astanana6": SubResource("Animation_0skxw")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_te7rm"]
+radius = 33.0151
+
+[node name="fritasaurus" type="CharacterBody2D"]
+top_level = true
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_b4o6f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_v6kb6")
+hframes = 3
+vframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_4ru46")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 4
+visibility_layer = 4
+shape = SubResource("CircleShape2D_te7rm")
+
+[node name="collisionador" parent="." instance=ExtResource("3_sy4ox")]
+visible = false
+rotation = -3.14159
+scale = Vector2(1.59126, 1.59126)

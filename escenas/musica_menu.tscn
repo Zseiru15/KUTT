@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvilrd6frt40e"]
+
+[ext_resource type="AudioStream" uid="uid://ml6fc87t45yb" path="res://music/Y2meta.app - Chill Lofi Beat - Forest (no copyright) (128 kbps).mp3" id="1_ah8xo"]
+
+[node name="musica menu" type="AudioStreamPlayer2D"]
+position = Vector2(-23, -31)
+scale = Vector2(1.68343, 1.20746)
+stream = ExtResource("1_ah8xo")
+autoplay = true

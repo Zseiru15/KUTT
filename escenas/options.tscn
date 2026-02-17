@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://d4rkurr44l08"]
+
+[ext_resource type="Script" path="res://codigo/options.gd" id="1_05sn7"]
+[ext_resource type="Theme" uid="uid://dss8h18f4r2j8" path="res://interfaz/default_theme.tres" id="1_q3b0e"]
+[ext_resource type="PackedScene" uid="uid://d1xe0as61gspl" path="res://escenas/botones.tscn" id="3_xabjr"]
+[ext_resource type="PackedScene" uid="uid://ba7j1ygrljrfy" path="res://escenas/fondo_interfaz.tscn" id="4_ox0ca"]
+[ext_resource type="Theme" uid="uid://bjs785tidhph7" path="res://interfaz/atras.tres" id="4_xk08m"]
+
+[node name="options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 320.0
+offset_top = -161.0
+offset_right = 320.0
+offset_bottom = -161.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.505, 0.505)
+theme = ExtResource("1_q3b0e")
+script = ExtResource("1_05sn7")
+metadata/_edit_group_ = true
+
+[node name="botones" parent="." instance=ExtResource("3_xabjr")]
+
+[node name="fondo interfaz" parent="." instance=ExtResource("4_ox0ca")]
+position = Vector2(1373, 816)
+scale = Vector2(6.31185, 5.9524)
+
+[node name="atras" type="Button" parent="."]
+layout_mode = 0
+offset_right = 14.0
+offset_bottom = 11.0
+scale = Vector2(20.9089, 20.9089)
+theme = ExtResource("4_xk08m")
+
+[node name="Label" type="Label" parent="atras"]
+visible = false
+layout_mode = 0
+offset_left = 4.92614
+offset_top = 2.96525
+offset_right = 44.9262
+offset_bottom = 25.9652
+scale = Vector2(0.164096, 0.164096)
+text = "atras"
+
+[connection signal="mouse_entered" from="atras" to="." method="_on_atras_mouse_entered"]
+[connection signal="mouse_exited" from="atras" to="." method="_on_atras_mouse_exited"]
+[connection signal="pressed" from="atras" to="." method="_on_atras_pressed"]

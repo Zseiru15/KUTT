@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkfo1exbak3gg"]
+
+[ext_resource type="AudioStream" uid="uid://cwtprd0cpsk4g" path="res://music/Y2meta.app - HD - Squidward Walking Sound Effect (128 kbps).mp3" id="1_6tnre"]
+
+[node name="caminando" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_6tnre")
+autoplay = true

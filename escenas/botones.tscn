@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1xe0as61gspl"]
+
+[ext_resource type="AudioStream" uid="uid://bd2gmtq67y785" path="res://music/Y2meta.app - Pop Sound Effects (Copyright Free) (128 kbps)(2).mp3" id="1_8p0rc"]
+
+[node name="botones" type="AudioStreamPlayer"]
+stream = ExtResource("1_8p0rc")

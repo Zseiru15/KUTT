@@ -1,0 +1,242 @@
+[gd_scene load_steps=27 format=3 uid="uid://b12my4sw0ovnj"]
+
+[ext_resource type="Script" uid="uid://g14lxv3kq4os" path="res://codigo/menu_principal.gd" id="1_jdut6"]
+[ext_resource type="PackedScene" uid="uid://c00130nyfetg7" path="res://escenas/camara principal.tscn" id="2_ggtcj"]
+[ext_resource type="PackedScene" uid="uid://bu6tv83mquhrk" path="res://overlays.tscn" id="2_xxcxu"]
+[ext_resource type="PackedScene" uid="uid://ba7j1ygrljrfy" path="res://escenas/fondo_interfaz.tscn" id="3_meu36"]
+[ext_resource type="Texture2D" uid="uid://5vravs1nff0l" path="res://interfaz/interfaz kutt original.png" id="4_pyh4n"]
+[ext_resource type="Theme" uid="uid://dss8h18f4r2j8" path="res://interfaz/default_theme.tres" id="4_uy0vv"]
+[ext_resource type="Theme" uid="uid://bltyab0wgcq7n" path="res://interfaz/off.tres" id="5_3h4tk"]
+[ext_resource type="PackedScene" uid="uid://bvilrd6frt40e" path="res://escenas/musica_menu.tscn" id="6_snp1t"]
+[ext_resource type="PackedScene" uid="uid://d1xe0as61gspl" path="res://escenas/botones.tscn" id="7_w671i"]
+[ext_resource type="Texture2D" uid="uid://d10rjd1eg11wr" path="res://interfaz/logo kutt interfaz.png" id="9_gn0v8"]
+[ext_resource type="Texture2D" uid="uid://dyp4ifrt1e7pr" path="res://interfaz/corazones_0001.png" id="10_eowg2"]
+[ext_resource type="Texture2D" uid="uid://36fgv5oufsyl" path="res://interfaz/corazones_0002.png" id="11_67yhy"]
+[ext_resource type="Texture2D" uid="uid://cwqon7a6lk1jh" path="res://interfaz/corazones_0003.png" id="12_lhp2v"]
+[ext_resource type="Texture2D" uid="uid://c2yvwnr3l5c7t" path="res://interfaz/corazones_0004.png" id="13_u323c"]
+[ext_resource type="Texture2D" uid="uid://di4amm5ijiypb" path="res://interfaz/corazones_0005.png" id="14_onx2k"]
+[ext_resource type="Texture2D" uid="uid://b0w7w5vsqgnqi" path="res://interfaz/corazones_0006.png" id="15_v8hwd"]
+[ext_resource type="Texture2D" uid="uid://ci08d5hsc26n2" path="res://interfaz/corazones_0007.png" id="16_m3jfs"]
+[ext_resource type="Texture2D" uid="uid://dsgfljpu2ilhf" path="res://interfaz/corazones_0008.png" id="17_7yyiy"]
+[ext_resource type="Texture2D" uid="uid://4jtpxt8knpa4" path="res://interfaz/bandera inglesa.png" id="19_mcvro"]
+[ext_resource type="Texture2D" uid="uid://s763qlg7llaa" path="res://interfaz/bandera español.png" id="20_t2q0a"]
+[ext_resource type="Texture2D" uid="uid://bt14620h7ebw4" path="res://interfaz/osito.png" id="21_7jipo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xruii"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_67yhy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_lhp2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_u323c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_onx2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_v8hwd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_m3jfs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_7yyiy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_eowg2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_eowg2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_eowg2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_eowg2")
+}],
+"loop": true,
+"name": &"corazones",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_7lekg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_xcvkq"]
+resource_name = "derecha"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ymeiv"]
+resource_name = "izquierda"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fty5n"]
+_data = {
+&"RESET": SubResource("Animation_7lekg"),
+&"derecha": SubResource("Animation_xcvkq"),
+&"izquierda": SubResource("Animation_ymeiv")
+}
+
+[node name="menu principal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jdut6")
+
+[node name="overlays" parent="." instance=ExtResource("2_xxcxu")]
+
+[node name="Camera2D" parent="." instance=ExtResource("2_ggtcj")]
+position = Vector2(0, 8)
+zoom = Vector2(2.858, 2.5)
+
+[node name="fondo interfaz" parent="." instance=ExtResource("3_meu36")]
+texture = ExtResource("4_pyh4n")
+
+[node name="exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = -44.0
+offset_top = 53.0
+offset_right = -24.0
+offset_bottom = 84.0
+scale = Vector2(1.879, 1.20076)
+theme = ExtResource("5_3h4tk")
+
+[node name="Label" type="Label" parent="exit"]
+visible = false
+layout_mode = 0
+offset_left = 10.9794
+offset_top = -0.739643
+offset_right = 69.9794
+offset_bottom = 48.2604
+scale = Vector2(0.801604, 0.979825)
+text = "exit
+
+"
+
+[node name="play" type="Button" parent="."]
+layout_mode = 0
+offset_left = -47.0
+offset_top = -0.999996
+offset_right = -6.0
+offset_bottom = 30.0
+scale = Vector2(2.27717, 1.3523)
+theme = ExtResource("4_uy0vv")
+
+[node name="Label" type="Label" parent="play"]
+layout_mode = 0
+offset_left = 7.90455
+offset_top = 0.739478
+offset_right = 66.9045
+offset_bottom = 49.7395
+scale = Vector2(0.739262, 0.892899)
+text = "PLAY
+
+"
+
+[node name="musica menu" parent="." instance=ExtResource("6_snp1t")]
+position = Vector2(-23, -53)
+
+[node name="botones" parent="." instance=ExtResource("7_w671i")]
+
+[node name="titulo" type="Sprite2D" parent="."]
+position = Vector2(3, -87)
+texture = ExtResource("9_gn0v8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -44)
+sprite_frames = SubResource("SpriteFrames_xruii")
+animation = &"corazones"
+autoplay = "corazones"
+frame_progress = 0.827026
+
+[node name="bandera inglesa" type="Sprite2D" parent="."]
+position = Vector2(153, 94)
+texture = ExtResource("19_mcvro")
+
+[node name="bandera española" type="Sprite2D" parent="."]
+position = Vector2(158, 95)
+texture = ExtResource("20_t2q0a")
+
+[node name="banderas" type="Button" parent="bandera española"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = -12.0
+offset_bottom = -12.0
+scale = Vector2(4.45228, 4.38421)
+flat = true
+
+[node name="osito" type="Sprite2D" parent="."]
+position = Vector2(-164, 87)
+texture = ExtResource("21_7jipo")
+hframes = 2
+metadata/_edit_group_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="osito"]
+libraries = {
+&"": SubResource("AnimationLibrary_fty5n")
+}
+
+[node name="osito" type="Button" parent="osito"]
+offset_left = -24.0
+offset_top = -29.0
+offset_right = -8.0
+offset_bottom = -12.0
+scale = Vector2(3.52937, 3.52937)
+flat = true
+
+[connection signal="mouse_entered" from="exit" to="." method="_on_exit_mouse_entered"]
+[connection signal="mouse_exited" from="exit" to="." method="_on_exit_mouse_exited"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
+[connection signal="mouse_entered" from="play" to="." method="_on_play_mouse_entered"]
+[connection signal="mouse_exited" from="play" to="." method="_on_play_mouse_exited"]
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="bandera española/banderas" to="." method="_on_banderas_mouse_entered"]
+[connection signal="mouse_exited" from="bandera española/banderas" to="." method="_on_banderas_mouse_exited"]
+[connection signal="mouse_entered" from="osito/osito" to="." method="_on_osito_mouse_entered"]
+[connection signal="mouse_exited" from="osito/osito" to="." method="_on_osito_mouse_exited"]
+[connection signal="pressed" from="osito/osito" to="." method="_on_osito_pressed"]

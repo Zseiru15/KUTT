@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ixobufj1jobs"]
+
+[ext_resource type="Texture2D" uid="uid://davxowxwiucg2" path="res://sprites/test/boton-de-play.png" id="1_jpiy5"]
+
+[node name="pointer" type="Marker2D"]
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.033712, 0.033712)
+texture = ExtResource("1_jpiy5")

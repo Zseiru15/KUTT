@@ -1,0 +1,351 @@
+[gd_scene load_steps=18 format=3 uid="uid://dap4jchtt7p2i"]
+
+[ext_resource type="Script" uid="uid://brtj3kesg26oy" path="res://codigo/boss_1.gd" id="1_0n6fj"]
+[ext_resource type="Texture2D" uid="uid://bth25ah2sudho" path="res://sprites/personajes/enemigos/popup boss.png" id="3_oy17u"]
+[ext_resource type="PackedScene" uid="uid://d3xumj2ac73pa" path="res://escenas/collisionador.tscn" id="3_q42vo"]
+[ext_resource type="PackedScene" uid="uid://cmds14wuligjv" path="res://instanciador.tscn" id="4_bpiue"]
+[ext_resource type="Texture2D" uid="uid://05toqnarkd5c" path="res://sprites/personajes/enemigos/boss cabeza.png" id="4_v4xch"]
+[ext_resource type="PackedScene" uid="uid://d0smixw7ni8v6" path="res://veneno.tscn" id="5_7dg13"]
+
+[sub_resource type="Animation" id="Animation_6koic"]
+resource_name = "atack_der"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../cabeza ataque:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 3, 3, 4, 4, 7, 2, 5, 8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../cabeza ataque:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../cabeza ataque:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_wev3n"]
+resource_name = "atack_down"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../cabeza ataque:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 3, 3, 4, 4, 7, 2, 5, 8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../cabeza ataque:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5708]
+}
+
+[sub_resource type="Animation" id="Animation_itmkg"]
+resource_name = "atack_izq"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../cabeza ataque:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 3, 3, 4, 4, 7, 2, 5, 8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../cabeza ataque:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../cabeza ataque:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+
+[sub_resource type="Animation" id="Animation_xp6td"]
+resource_name = "atack_up"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../cabeza ataque:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 3, 3, 4, 4, 7, 2, 5, 8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../cabeza ataque:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.5708]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l1tmk"]
+_data = {
+&"atack_der": SubResource("Animation_6koic"),
+&"atack_down": SubResource("Animation_wev3n"),
+&"atack_izq": SubResource("Animation_itmkg"),
+&"atack_up": SubResource("Animation_xp6td")
+}
+
+[sub_resource type="Animation" id="Animation_0l3pk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../instanciador:escupitajo")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../cabeza ataque:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../cabeza ataque:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5708]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../cabeza ataque:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_q7c8o"]
+resource_name = "chomp"
+length = 0.9
+step = 0.333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.103823, 0.206921, 0.310021, 0.416895, 0.523045, 0.626144, 0.734047),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 8, 1, 5, 9, 13, 2, 6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../instanciador:escupitajo")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_14php"]
+resource_name = "esconder"
+length = 0.9
+step = 0.333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.103823, 0.206921, 0.310021, 0.416895, 0.523045, 0.626144, 0.734047),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 8, 1, 5, 9, 13, 2, 6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../instanciador:escupitajo")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_fjdgh"]
+resource_name = "venom"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [6, 10, 14, 3, 14, 10]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3a4uv"]
+_data = {
+&"RESET": SubResource("Animation_0l3pk"),
+&"chomp": SubResource("Animation_q7c8o"),
+&"esconder": SubResource("Animation_14php"),
+&"venom": SubResource("Animation_fjdgh")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bkds7"]
+radius = 35.0143
+
+[node name="boss1" type="CharacterBody2D"]
+top_level = true
+script = ExtResource("1_0n6fj")
+
+[node name="Animacion_ataque" type="AnimationPlayer" parent="."]
+root_node = NodePath("../venom sprite")
+libraries = {
+&"": SubResource("AnimationLibrary_l1tmk")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../venom sprite")
+libraries = {
+&"": SubResource("AnimationLibrary_3a4uv")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 4
+visibility_layer = 4
+shape = SubResource("CircleShape2D_bkds7")
+disabled = true
+
+[node name="cabeza ataque" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("4_v4xch")
+flip_h = true
+hframes = 3
+vframes = 3
+
+[node name="venom sprite" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_oy17u")
+hframes = 4
+vframes = 4
+
+[node name="collisionador" parent="." instance=ExtResource("3_q42vo")]
+visible = false
+position = Vector2(1.52588e-05, 1.00002)
+rotation = -3.14159
+scale = Vector2(1.93126, 1.93126)
+
+[node name="daño_por_segundo" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="instanciador" parent="." instance=ExtResource("4_bpiue")]
+escupitajo = true
+charcos_de_veneno = ExtResource("5_7dg13")
+
+[connection signal="timeout" from="daño_por_segundo" to="." method="_on_daño_por_segundo_timeout"]
